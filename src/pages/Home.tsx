@@ -44,7 +44,7 @@ export default function Home() {
     <div className="space-y-12">
       <header className="max-w-2xl">
         <h1 className="text-5xl font-bold tracking-tight text-stone-900 mb-4">
-          Thoughts, stories and ideas.
+          Thoughts, stories, your moments.
         </h1>
         <p className="text-xl text-stone-600 leading-relaxed">
           A place to share knowledge and explore the world of writing.

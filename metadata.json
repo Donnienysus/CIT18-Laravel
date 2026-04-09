@@ -1,5 +1,5 @@
 {
-  "name": "Blog CMS",
+  "name": "Blog Sphere",
   "description": "A professional blog content management system with role-based access control, CRUD for posts, categories, tags, and a real-time comment system.",
   "requestFramePermissions": []
 }

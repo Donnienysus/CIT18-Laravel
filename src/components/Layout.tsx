@@ -24,7 +24,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <div className="w-8 h-8 bg-stone-900 rounded-lg flex items-center justify-center text-white group-hover:rotate-12 transition-transform">
                   <BookOpen size={18} />
                 </div>
-                <span className="text-xl font-bold tracking-tight">BlogCMS</span>
+                <span className="text-xl font-bold tracking-tight">Blog Sphere</span>
               </Link>
               
               <div className="hidden md:flex items-center gap-6 text-sm font-medium text-stone-600">
@@ -87,7 +87,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       <footer className="border-t border-stone-200 bg-white py-12 mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-stone-500 text-sm">© 2026 BlogCMS. Built for creators.</p>
+          <p className="text-stone-500 text-sm">© 2026 Blog Sphere. Built for imaginative creators.</p>
         </div>
       </footer>
     </div>
