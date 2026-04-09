@@ -1,0 +1,95 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "Extended user information including roles.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Firebase Auth UID" },
+        "email": { "type": "string", "format": "email" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "role": { "type": "string", "enum": ["admin", "author", "reader"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email", "role"]
+    },
+    "Post": {
+      "title": "Blog Post",
+      "description": "A blog post entry.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "slug": { "type": "string" },
+        "content": { "type": "string" },
+        "excerpt": { "type": "string" },
+        "authorUid": { "type": "string" },
+        "authorName": { "type": "string" },
+        "status": { "type": "string", "enum": ["draft", "published"] },
+        "categoryId": { "type": "string" },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" },
+        "publishedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "slug", "content", "authorUid", "status"]
+    },
+    "Category": {
+      "title": "Category",
+      "description": "Blog post category.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "slug": { "type": "string" },
+        "description": { "type": "string" }
+      },
+      "required": ["name", "slug"]
+    },
+    "Tag": {
+      "title": "Tag",
+      "description": "Blog post tag.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "slug": { "type": "string" }
+      },
+      "required": ["name", "slug"]
+    },
+    "Comment": {
+      "title": "Comment",
+      "description": "A comment on a blog post.",
+      "type": "object",
+      "properties": {
+        "postId": { "type": "string" },
+        "authorUid": { "type": "string" },
+        "authorName": { "type": "string" },
+        "authorPhoto": { "type": "string" },
+        "content": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["postId", "authorUid", "content"]
+    }
+  },
+  "firestore": {
+    "/users/{uid}": {
+      "schema": "User",
+      "description": "User profiles and roles."
+    },
+    "/posts/{postId}": {
+      "schema": "Post",
+      "description": "Blog posts."
+    },
+    "/categories/{categoryId}": {
+      "schema": "Category",
+      "description": "Post categories."
+    },
+    "/tags/{tagId}": {
+      "schema": "Tag",
+      "description": "Post tags."
+    },
+    "/posts/{postId}/comments/{commentId}": {
+      "schema": "Comment",
+      "description": "Comments on a specific post."
+    }
+  }
+}
